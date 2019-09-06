@@ -117,68 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MyCuteProperty1" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="MyCuteProperty2" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="userControl11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 75</value>
-  </data>
-  <data name="userControl11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 84</value>
-  </data>
-  <data name="userControl11.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;userControl11.Name" xml:space="preserve">
-    <value>userControl11</value>
-  </data>
-  <data name="&gt;&gt;userControl11.Type" xml:space="preserve">
-    <value>PropertyBagTest.UserControl1, PropertyBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;userControl11.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;userControl11.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="MyCuteProperty1" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="MyCuteProperty2" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="userControl12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 33</value>
-  </data>
-  <data name="userControl12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 75</value>
-  </data>
-  <data name="userControl12.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;userControl12.Name" xml:space="preserve">
-    <value>userControl12</value>
-  </data>
-  <data name="&gt;&gt;userControl12.Type" xml:space="preserve">
-    <value>PropertyBagTest.UserControl1, PropertyBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;userControl12.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;userControl12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 170</value>
+    <value>455, 31</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 50</value>
+    <value>127, 42</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -191,10 +137,100 @@
   <data name="&gt;&gt;button1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="userControl13.MyCuteProperty1" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="userControl13.MyCuteProperty2" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="userControl13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 96</value>
+  </data>
+  <data name="userControl13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 163</value>
+  </data>
+  <data name="userControl13.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;userControl13.Name" xml:space="preserve">
+    <value>userControl13</value>
+  </data>
+  <data name="&gt;&gt;userControl13.Type" xml:space="preserve">
+    <value>PropertyBagTest.UserControl1, PropertyBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;userControl13.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;userControl13.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="userControl14.MyCuteProperty1" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="userControl14.MyCuteProperty2" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="userControl14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 298</value>
+  </data>
+  <data name="userControl14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 150</value>
+  </data>
+  <data name="userControl14.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;userControl14.Name" xml:space="preserve">
+    <value>userControl14</value>
+  </data>
+  <data name="&gt;&gt;userControl14.Type" xml:space="preserve">
+    <value>PropertyBagTest.UserControl1, PropertyBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;userControl14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;userControl14.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="propertyGrid1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 63</value>
+  </data>
+  <data name="propertyGrid1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 304</value>
+  </data>
+  <data name="propertyGrid1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.Name" xml:space="preserve">
+    <value>propertyGrid1</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="propertyGrid2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>597, 63</value>
+  </data>
+  <data name="propertyGrid2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 304</value>
+  </data>
+  <data name="propertyGrid2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid2.Name" xml:space="preserve">
+    <value>propertyGrid2</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -204,7 +240,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>442, 261</value>
+    <value>946, 460</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

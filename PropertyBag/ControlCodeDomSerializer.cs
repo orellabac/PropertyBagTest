@@ -13,6 +13,10 @@ namespace PropertyBagTest
 {
     public class ControlCodeDomSerializer : CodeDomSerializer
     {
+        public string CustomGetUniqueName(IDesignerSerializationManager manager, object value)
+        {
+            return base.GetUniqueName(manager, value);
+        }
 
         public ComponentResourceManager FindResources(IDesignerSerializationManager manager)
         {

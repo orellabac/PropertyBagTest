@@ -24,5 +24,10 @@ namespace PropertyBagTest
         {
             MessageBox.Show("MyProperty" + this.userControl1121.MyProperty);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("My Property1" + this.userControl11.MyProperty);
+        }
     }
 }
