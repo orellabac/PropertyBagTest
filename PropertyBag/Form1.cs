@@ -14,7 +14,15 @@ namespace PropertyBagTest
     {
         public Form1()
         {
+            var resources = new System.ComponentModel.ComponentResourceManager(this.GetType());
+            var x = resources.GetObject("MyCuteProperty1");
+
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("MyProperty" + this.userControl1121.MyProperty);
         }
     }
 }

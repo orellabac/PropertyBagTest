@@ -13,13 +13,39 @@ namespace PropertyBagTest
 {
     public class ControlCodeDomSerializer : CodeDomSerializer
     {
+
+        public ComponentResourceManager FindResources(IDesignerSerializationManager manager)
+        {
+            ComponentResourceManager resources = null;
+            for (int i = 0; i < 10; i++)
+            {
+                var possibleResources = manager.Context[i];
+                if (possibleResources == null)
+                {
+                    break;
+                }
+                else
+                {
+                    if (possibleResources is ComponentResourceManager)
+                    {
+                        resources = (ComponentResourceManager)possibleResources;
+                    }
+                }
+            }
+
+            return resources;
+        }
+
+
         public void CustomSerializeResource(IDesignerSerializationManager manager, string resourceName, object value)
         {
             base.SerializeResource(manager, resourceName, value);
         }
 
-        public void CustomDeSerializeResource(IDesignerSerializationManager manager, string resourceName, object value)
+        public object CustomDeSerializeResource(IDesignerSerializationManager manager, string resourceName, object value)
         {
+            var resources = this.FindResources(manager);
+            return resources.GetObject(resourceName);
             //ResourceCodeDomSerializer.Default.WriteResource(manager, resourceName, value);
         }
 

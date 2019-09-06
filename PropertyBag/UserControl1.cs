@@ -7,25 +7,41 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design.Serialization;
 using System.ComponentModel;
+using System;
 
 namespace PropertyBagTest
 {
     [DesignerSerializer(typeof(UserControl1CustomSerializer),typeof(CodeDomSerializer))]
     public partial class UserControl1 : UserControl
     {
+        public int MyProperty { get; set; }
+
         public UserControl1()
         {
             InitializeComponent();
+            //this.ApplyPropertyBag();
+        }
+
+        private void ApplyPropertyBag()
+        {
+            if (!this.DesignMode)
+            {
+                var propertyBag = new PropertyBag(this);
+                this.ReadProperties(propertyBag);
+            }
         }
 
         public void ReadProperties(PropertyBag propertyBag)
         {
-
+            var x = (int)propertyBag.ReadProperty("MyCuteProperty1", 10);
+            var y = (int)propertyBag.ReadProperty("MyCuteProperty2", 10);
+            this.MyProperty = x + y;
         }
 
         public void WriteProperties(PropertyBag propertyBag)
         {
-
+            propertyBag.WriteProperty("MyCuteProperty1", 100, 0);
+            propertyBag.WriteProperty("MyCuteProperty2", 100, 0);
         }
     }
 
@@ -36,10 +52,9 @@ namespace PropertyBagTest
             var writePropertiesMethod = value.GetType().GetMethod("WriteProperties", new System.Type[] { typeof(PropertyBag) });
             if (writePropertiesMethod != null)
             {
-                var propertyBag = new PropertyBag(this, manager);
+                var propertyBag = new PropertyBag(this, manager,value);
                 writePropertiesMethod.Invoke(value, new object[] { propertyBag } );
             }
-            System.Diagnostics.Debugger.Launch();
             return base.Serialize(manager, value);
         }
 
@@ -53,60 +68,68 @@ namespace PropertyBagTest
                 var resources = FindResources(manager);
                 if (resources != null)
                 {
-                    var propertyBag = new PropertyBag(this, manager);
-                    readPropertiesMethod.Invoke(res, new object[] { propertyBag });
+                    var propertyBag = new PropertyBag(this, manager, res);
+                    try
+                    {
+                        readPropertiesMethod.Invoke(res, new object[] { propertyBag });
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
             return res;
         }
 
-        private static ComponentResourceManager FindResources(IDesignerSerializationManager manager)
-        {
-            ComponentResourceManager resources = null;
-            for (int i = 0; i < 10; i++)
-            {
-                var possibleResources = manager.Context[i];
-                if (possibleResources == null)
-                {
-                    break;
-                }
-                else
-                {
-                    if (possibleResources is ComponentResourceManager)
-                    {
-                        resources = null;
-                    }
-                }
-            }
-
-            return resources;
-        }
     }
 
     public class PropertyBag
     {
         private ControlCodeDomSerializer serializer;
+        private IDesignerSerializationManager manager;
         private object instance;
+        private ComponentResourceManager resources;
 
-        public PropertyBag(PropertyBagTest.ControlCodeDomSerializer serializer, object instance)
+        public PropertyBag(PropertyBagTest.ControlCodeDomSerializer serializer, IDesignerSerializationManager manager, object instance)
         {
             this.serializer = serializer;
+            this.manager = manager;
             this.instance = instance;
+        }
+
+
+        public PropertyBag(object instance)
+        {
+           this.resources = new System.ComponentModel.ComponentResourceManager(instance.GetType());
         }
 
 
         public object ReadProperty(string propertyName, object defaultValue)
         {
-            var propInfo = instance.GetType().GetProperty(propertyName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
-            if (propInfo != null)
+            //var propInfo = instance.GetType().GetProperty(propertyName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
+            //if (propInfo != null)
+            //{
+
+            //}
+            if (this.resources != null)
             {
+                try
+                {
+                    return this.resources.GetObject(propertyName);
+                }
+                catch
+                {
+                    return defaultValue; 
+                }
             }
-            return defaultValue;
+            else 
+                return this.serializer.CustomDeSerializeResource(manager, propertyName, this.instance) ?? defaultValue;
         }
 
         public void WriteProperty(string propertyName, object value, object defaultValue)
         {
-
+            this.serializer.CustomSerializeResource(this.manager, propertyName, value ?? defaultValue);
         }
     }
 
